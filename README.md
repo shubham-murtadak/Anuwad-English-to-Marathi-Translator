@@ -1,6 +1,6 @@
-# Anuwad - English to Marathi Translator 🌐
+# 🤖 Anuwad - English to Marathi Translator 🤖
 
-## Neural Machine Translation with TensorFlow 🤖
+## Neural Machine Translation with TensorFlow 🌐💬
 
 This repository contains a TensorFlow implementation of an Attention-based Neural Machine Translation (NMT) model named **Anuwad**. The model leverages the Bahdanau Attention mechanism to translate sentences from English to Marathi using a deep learning architecture. 🚀
 
