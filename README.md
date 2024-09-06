@@ -13,7 +13,8 @@ The architecture consists of the following components:
 1. **The Encoder**: Processes the input sequence and produces a context-rich representation of the source sentence. 📖
 2. **The Decoder**: Generates the target sequence based on the context provided by the encoder and the previously generated tokens. 🛠️
 3. **The Bahdanau Attention Algorithm**: Allows the decoder to focus on different parts of the input sequence at each step of generation, improving translation quality. 🌟
-
+   
+![Flask UI](Demo/BahdanauAttention.png)
 
 ### Flask UI 🖥️💻
 
