@@ -18,7 +18,7 @@ The architecture consists of the following components:
 
 A Flask-based UI is provided for running the model locally. This interface allows users to input English sentences and view the corresponding Marathi translations.
 
-![Flask UI](pic1)
+![Demo](demo.png)
 
 ## Results 🎯
 
