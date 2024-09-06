@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Translator</title>
+    <link rel="icon" href="static/favicon.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="static/favicon.jpeg" type="image/x-icon">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/background.png'); /* Path to your background image */
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto; /* Full viewport height */
+        }
+
+        h1 {
+            color: #ffffff; /* White text */
+            font-family: 'Arial', sans-serif; /* Clean font */
+            font-size: 48px; /* Larger font size */
+            font-weight: bold; /* Bold font */
+            background-color: #4CAF50; /* Light green background */
+            padding: 20px 40px; /* Increased padding for more space */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly deeper shadow */
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 2px; /* Letter spacing */
+            text-align: center; /* Center the text inside the h1 */
+            margin-top: 0;
+            position: fixed;
+            top: 20px; /* Adjust the top position */
+            z-index: 10; /* Keep it above other content */
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin-top: 150px; /* Make room for the headline */
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        textarea, select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 12px 30px;
+            background-color: #28a745; /* Green button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        h2 {
+            margin: 20px 0 10px;
+            color: #333;
+        }
+
+        p {
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 16px;
+        }
+
+        audio {
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Text Translator</h1>
+    
+    <div class="container">
+        <form method="POST">
+            <label for="input_text">Enter the text to be translated:</label><br>
+            <textarea name="input_text" rows="4" cols="10" required></textarea>
+
+            <label for="target_language">Select the target language:</label><br>
+            <select name="target_language">
+                {% for lang in languages %}
+                    <option value="{{ lang.code }}">{{ lang.name }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <input type="submit" value="Translate">
+        </form>
+
+        {% if input_text %}
+        <h2>Input text:</h2>
+        <p>{{ input_text }}</p>
+        {% endif %}
+
+        {% if translated_text %}
+        <h2>Translated text:</h2>
+        <audio controls>
+            <source src="{{ audio_filename }}" type="audio/mpeg">
+        </audio>
+        <p>{{ translated_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
