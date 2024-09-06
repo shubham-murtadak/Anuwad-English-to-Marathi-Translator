@@ -14,11 +14,13 @@ The architecture consists of the following components:
 2. **The Decoder**: Generates the target sequence based on the context provided by the encoder and the previously generated tokens. 🛠️
 3. **The Bahdanau Attention Algorithm**: Allows the decoder to focus on different parts of the input sequence at each step of generation, improving translation quality. 🌟
 
-### Flask UI 🖥️
 
-A Flask-based UI is provided for running the model locally. This interface allows users to input English sentences and view the corresponding Marathi translations.
+### Flask UI 🖥️💻
 
-![Demo](demo.png)
+A user-friendly Flask-based UI allows you to run the model locally. Input English sentences and get Marathi translations with ease.
+
+![Flask UI](Demo/demo.png)
+
 
 ## Results 🎯
 
