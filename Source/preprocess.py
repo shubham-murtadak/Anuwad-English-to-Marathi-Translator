@@ -3,7 +3,7 @@ import pickle
 
 
 # english contraction expansion
-with open("data/contraction_expansion.txt", 'rb') as fp:
+with open("Data\Input\contraction_expansion.txt", 'rb') as fp:
     contractions= pickle.load(fp)
 
 def expand_contras(text):
